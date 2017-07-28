@@ -20,7 +20,7 @@ describe("Hero", function(){
     assert.strictEqual(hero.favouriteFood, "Curry");
   })
 
-  xit("should start with a reward total of zero", function(){
+  it("should start with a reward total of zero", function(){
     assert.strictEqual(hero.rewardTotal, 0);
   })
 
