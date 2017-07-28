@@ -8,4 +8,8 @@ var Hero = function(name, health, favouriteFood) {
   this.rewardTotal = 0;
 }
 
+Hero.prototype.addTask = function(task){
+  this.taskCollection.push(task);
+}
+
 module.exports = Hero;
