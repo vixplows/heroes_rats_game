@@ -20,8 +20,8 @@ describe("Task", function(){
     assert.strictEqual(task.urgencyLevel, "high");
   })
 
-  xit("should have a reward value", function(){
-    assert.strictEqual(taks.rewardValue, 50);
+  it("should have a reward value", function(){
+    assert.strictEqual(task.rewardValue, 50);
   })
 
   xit("should start not completed", function(){
