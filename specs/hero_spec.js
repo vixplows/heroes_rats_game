@@ -25,7 +25,7 @@ describe("Hero", function(){
   })
 
   it("should start with an empty task collection", function(){
-    assert.strictEqual(hero.taskCollection.length, 0)
+    assert.strictEqual(hero.taskCollection.length, 0);
   })
 
 })

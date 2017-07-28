@@ -8,4 +8,16 @@ describe("Food", function(){
     food = new Food("Curry", 50);
   });
 
+  it("should have a name", function(){
+    assert.strictEqual(food.name, "Curry");
+  })
+
+  xit("should have a replenishment value", function(){
+    assert.strictEqual(food.replenishmentValue, 50);
+  })
+
+  xit("should start not poisonous", function(){
+    assert.strictEqual(food.poisonous, false);
+  })
+
 })
