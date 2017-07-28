@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Account = require('../food');
+var Food = require('../food');
 
 describe("Food", function(){
   var food;

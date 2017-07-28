@@ -12,7 +12,7 @@ describe("Hero", function(){
     assert.strictEqual(hero.name, "Beveridge");
   })
 
-  xit("should have a health value", function(){
+  it("should have a health value", function(){
     assert.strictEqual(hero.health, 100);
   })
 

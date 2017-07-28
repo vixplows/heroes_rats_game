@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Account = require('../task');
+var Task = require('../task');
 
 describe("Task", function(){
   var hero;
@@ -7,5 +7,5 @@ describe("Task", function(){
   beforeEach(function(){
     task = new Task("rescue a dog", 10, "low", 5);
   });
-  
+
 })
