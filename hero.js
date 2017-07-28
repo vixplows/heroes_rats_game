@@ -13,7 +13,11 @@ Hero.prototype.addTask = function(task){
 }
 
 Hero.prototype.eatFood = function(food){
-  return this.health += food.replenishmentValue;
+  if (food.name === this.favouriteFood) {
+    return this.health += (food.replenishmentValue * 1.015);
+  } else {
+      return this.health += food.replenishmentValue;
+    }
 }
 
 module.exports = Hero;
