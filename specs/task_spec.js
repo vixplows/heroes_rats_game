@@ -12,8 +12,8 @@ describe("Task", function(){
     assert.strictEqual(task.name, "rescue a dog");
   })
 
-  xit("should have a difficulty level", function(){
-    assert.strictEqual(task.diffiucltyLevel, 10);
+  it("should have a difficulty level", function(){
+    assert.strictEqual(task.difficultyLevel, 10);
   })
 
   xit("should have an urgency level", function(){
