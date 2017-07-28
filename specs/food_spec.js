@@ -7,3 +7,5 @@ describe("Food", function(){
   beforeEach(function(){
     food = new Food("Curry", 50);
   });
+
+})

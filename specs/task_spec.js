@@ -7,3 +7,5 @@ describe("Task", function(){
   beforeEach(function(){
     task = new Task("rescue a dog", 10, "low", 5);
   });
+  
+})
