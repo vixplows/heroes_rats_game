@@ -12,7 +12,7 @@ describe("Food", function(){
     assert.strictEqual(food.name, "Curry");
   })
 
-  xit("should have a replenishment value", function(){
+  it("should have a replenishment value", function(){
     assert.strictEqual(food.replenishmentValue, 50);
   })
 
