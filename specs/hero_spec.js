@@ -1,6 +1,7 @@
 var assert = require('assert');
 var Hero = require('../hero');
 var Task = require('../task');
+var Food = require('../food');
 
 describe("Hero", function(){
   var hero;
@@ -11,6 +12,7 @@ describe("Hero", function(){
     task1 = new Task("rescue a dog", 5, "low", 20);
     task2 = new Task("save city's poor", 8, "med", 35);
     task3 = new Task("create national health service", 10, "high", 50);
+    food1 = new Food("Curry", 50);
   });
 
   it("should have a name", function(){
@@ -38,6 +40,11 @@ describe("Hero", function(){
     hero.addTask(task2);
     hero.addTask(task3);
     assert.strictEqual(hero.taskCollection.length, 3);
+  })
+
+  it("should be able to eat food", function(){
+    hero.eatFood(food1);
+    assert.strictEqual(hero.health, 150);
   })
 
 })
