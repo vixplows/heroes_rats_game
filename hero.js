@@ -17,7 +17,11 @@ Hero.prototype.eatFood = function(food){
     return this.health += (food.replenishmentValue * 1.015);
   } else {
       return this.health += food.replenishmentValue;
-    }
+    };
+}
+
+Hero.prototype.sortTasksByLeastDifficult = function(){
+  return _.sortBy(this.taskCollection, ['difficultyLevel']);
 }
 
 module.exports = Hero;
