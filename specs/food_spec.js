@@ -20,4 +20,9 @@ describe("Food", function(){
     assert.strictEqual(food.poisonous, false);
   })
 
+  it("should be able to become poisonous", function(){
+    food.makePoisonous();
+    assert.strictEqual(food.poisonous, true);
+  })
+
 })

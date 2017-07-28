@@ -6,4 +6,8 @@ var Food = function(name, replenishmentValue) {
   this.poisonous = false
 }
 
+Food.prototype.makePoisonous = function(){
+  this.poisonous = true;
+}
+
 module.exports = Food;
