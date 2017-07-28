@@ -24,7 +24,7 @@ describe("Task", function(){
     assert.strictEqual(task.rewardValue, 50);
   })
 
-  xit("should start not completed", function(){
+  it("should start not completed", function(){
     assert.strictEqual(task.completed, false);
   })
 
