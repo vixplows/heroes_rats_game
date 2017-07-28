@@ -24,7 +24,7 @@ describe("Hero", function(){
     assert.strictEqual(hero.rewardTotal, 0);
   })
 
-  xit("should start with an empty task collection", function(){
+  it("should start with an empty task collection", function(){
     assert.strictEqual(hero.taskCollection.length, 0)
   })
 
