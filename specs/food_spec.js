@@ -5,11 +5,11 @@ describe("Food", function(){
   var food;
 
   beforeEach(function(){
-    food = new Food("Curry", 50);
+    food = new Food("curry", 50);
   });
 
   it("should have a name", function(){
-    assert.strictEqual(food.name, "Curry");
+    assert.strictEqual(food.name, "curry");
   })
 
   it("should have a replenishment value", function(){
