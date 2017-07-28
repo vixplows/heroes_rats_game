@@ -8,5 +8,9 @@ var Task = function(name, difficultyLevel, urgencyLevel, rewardValue) {
   this.completed = false;
 }
 
+Task.prototype.markCompleted = function(){
+  this.completed = true;
+}
+
 
 module.exports = Task;
