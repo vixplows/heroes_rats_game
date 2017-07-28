@@ -16,7 +16,7 @@ describe("Food", function(){
     assert.strictEqual(food.replenishmentValue, 50);
   })
 
-  xit("should start not poisonous", function(){
+  it("should start not poisonous", function(){
     assert.strictEqual(food.poisonous, false);
   })
 
