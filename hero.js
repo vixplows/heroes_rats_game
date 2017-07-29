@@ -33,14 +33,12 @@ Hero.prototype.sortTasks = function(sortby, order){
 
 Hero.prototype.viewCompletedOrIncompleteTasks = function(searchfor){
   if (searchfor === "completed") {
-    return _.filter(this.taskCollection, ["completed", true]);
-  } 
-    if (searchfor === "incomplete") {
+      return _.filter(this.taskCollection, ["completed", true]);
+  } else if (searchfor === "incomplete") {
       return _.filter(this.taskCollection, ["completed", false]);
-    }
-      else {
-        return "enter incomplete or completed?"
-      }  
+  } else {
+      return "enter incomplete or completed?"
+  }  
 }
 
 module.exports = Hero;
