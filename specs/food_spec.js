@@ -25,4 +25,8 @@ describe("Food", function(){
     assert.strictEqual(food.poisonous, true);
   })
 
+  it("should have poison value of zero at start", function(){
+    assert.strictEqual(food.poisonValue, 0);
+  })
+
 })

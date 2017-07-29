@@ -4,7 +4,6 @@ var Food = require('../food');
 
 describe("Rat", function(){
   var rat;
-  var food;
 
   beforeEach(function(){
     rat = new Rat("Maggie", 4);
@@ -22,6 +21,7 @@ describe("Rat", function(){
   it("should touch food", function(){
     rat.touchFood(food);
     assert.strictEqual(food.poisonous, true);
+    assert.strictEqual(food.poisonValue, 4);
   })
 
 })

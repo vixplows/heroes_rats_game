@@ -8,6 +8,7 @@ describe("Hero", function(){
   var hero;
   var task;
   var food;
+  var rat;
 
   beforeEach(function(){
     hero = new Hero("Beveridge", 100, "curry");
@@ -16,6 +17,7 @@ describe("Hero", function(){
     task3 = new Task("create national health service", 10, 2, 50);
     food1 = new Food("pizza", 50);
     food2 = new Food("curry", 10);
+    rat = new Rat("Maggie", 4);
   });
 
   it("should have a name", function(){
@@ -58,6 +60,12 @@ describe("Hero", function(){
     hero.eatFood(food2);
     assert.strictEqual(hero.health, 110.15);
   });
+
+  xit("should eat poisonous food and lose health", function(){
+    rat.touchFood(food2);
+    hero.eatFood(food2);
+    assert.strictEqual(hero.health, 96);
+  })
 
   it("should be able to sort tasks by difficulty, urgency or reward and in ascending or descending order", function(){
     hero.addTask(task3);
