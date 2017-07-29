@@ -4,6 +4,7 @@ var Food = require('../food');
 
 describe("Rat", function(){
   var rat;
+  var food;
 
   beforeEach(function(){
     rat = new Rat("Maggie", 4);

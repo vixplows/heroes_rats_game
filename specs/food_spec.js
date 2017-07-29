@@ -1,11 +1,13 @@
 var assert = require('assert');
 var Food = require('../food');
+var Rat = require('../rat');
 
 describe("Food", function(){
   var food;
 
   beforeEach(function(){
     food = new Food("curry", 50);
+    rat = new Rat("Maggie", 4);
   });
 
   it("should have a name", function(){
@@ -27,6 +29,11 @@ describe("Food", function(){
 
   it("should have poison value of zero at start", function(){
     assert.strictEqual(food.poisonValue, 0);
+  })
+
+  it("should increase poison value when touched by rat", function(){
+    rat.touchFood(food);
+    assert.strictEqual(food.poisonValue, 4);
   })
 
 })

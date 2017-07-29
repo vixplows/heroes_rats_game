@@ -62,8 +62,8 @@ describe("Hero", function(){
   });
 
   xit("should eat poisonous food and lose health", function(){
-    rat.touchFood(food2);
-    hero.eatFood(food2);
+    rat.touchFood(food1);
+    hero.eatFood(food1);
     assert.strictEqual(hero.health, 96);
   })
 
