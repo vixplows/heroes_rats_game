@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 var Task = function(name, difficultyLevel, urgencyLevel, rewardValue) {
   this.name = name;
   this.difficultyLevel = difficultyLevel;

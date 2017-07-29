@@ -2,10 +2,12 @@ var assert = require('assert');
 var Hero = require('../hero');
 var Task = require('../task');
 var Food = require('../food');
+var Rat = require('../rat');
 
 describe("Hero", function(){
   var hero;
   var task;
+  var food;
 
   beforeEach(function(){
     hero = new Hero("Beveridge", 100, "curry");
@@ -88,7 +90,6 @@ describe("Hero", function(){
     hero.addTask(task1);
     hero.addTask(task2);
     hero.addTask(task3);
-    // mark task2 as completed
     task2.markCompleted();
     // return array of completed tasks
     assert.deepEqual(hero.viewCompletedOrIncompleteTasks("completed"),
@@ -103,19 +104,5 @@ describe("Hero", function(){
       ]);
     assert.strictEqual(hero.viewCompletedOrIncompleteTasks("what!"), "enter incomplete or completed?")
   });
-
-  // xit("should be able to view tasks that are marked as incomplete", function(){
-  //   hero.addTask(task1);
-  //   hero.addTask(task2);
-  //   hero.addTask(task3);
-  //   // mark task2 as completed
-  //   task2.markCompleted();
-  //   // return array of incompleted tasks
-  //   assert.deepEqual(hero.uncompletedTasks(false),
-  //     [ 
-  //       {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false},
-  //       {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}
-  //     ]);
-  // });
 
 })

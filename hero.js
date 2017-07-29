@@ -28,8 +28,6 @@ Hero.prototype.sortTasks = function(sortby, order){
   return _.orderBy(this.taskCollection, [sortby], [order]);
 }
 
-//use callbacks??
-
 Hero.prototype.viewCompletedOrIncompleteTasks = function(searchfor){
   if (searchfor === "completed") {
     return _.filter(this.taskCollection, ["completed", true]);

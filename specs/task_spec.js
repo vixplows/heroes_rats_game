@@ -2,7 +2,7 @@ var assert = require('assert');
 var Task = require('../task');
 
 describe("Task", function(){
-  var hero;
+  var task;
 
   beforeEach(function(){
     task = new Task("rescue a dog", 10, 10, 50);
