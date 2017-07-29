@@ -12,20 +12,16 @@ Hero.prototype.addTask = function(task){
   this.taskCollection.push(task);
 }
 
-// need to also add in check for if food is poisonous, if true then need to delete rat.posionValue from heros health
 Hero.prototype.eatFood = function(food){
-  if (food.name === this.favouriteFood && food.posionValue !== true) {
-    return this.health += (food.replenishmentValue * 1.015);
+  if (food.poisonous === true) {
+    this.health -= food.poisonValue;
   }
-    else if (food.name === this.favouriteFood && food.posionValue === true) {
-      return this.health -= food.posionValue;
+    else if (food.name === this.favouriteFood) {
+      return this.health += (food.replenishmentValue * 1.015);
     }
-      else if (food.name !== this.favouriteFood && food.posionValue === true) {
-        return this.health -= food.posionValue;
+      else {
+        return this.health += food.replenishmentValue;
       }
-        else {
-          return this.health += food.replenishmentValue;
-        }
 }
 
 Hero.prototype.talk = function(){
