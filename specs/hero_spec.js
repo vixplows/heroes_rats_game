@@ -92,4 +92,31 @@ describe("Hero", function(){
         {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}
       ]);
   });
+
+  it("should be able to sort tasks by difficulty, urgency or reward and in ascending or descending order", function(){
+    hero.addTask(task3);
+    hero.addTask(task1);
+    hero.addTask(task2);
+    // by difficulty ascending (least difficult)
+    assert.deepEqual(hero.sortTasks("difficultyLevel", "asc"), 
+      [
+        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false}, 
+        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}, 
+        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}
+      ]);
+    // by urgency descending (most urgent)
+    assert.deepEqual( hero.sortTasks("urgencyLevel", "desc"), 
+      [
+        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}, 
+        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}, 
+        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false}
+      ]);
+    // by reward (greatest reward)
+    assert.deepEqual(hero.sortTasks("rewardValue", "desc"), 
+      [
+        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false},
+        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false},
+        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}
+      ]);
+  });
 })

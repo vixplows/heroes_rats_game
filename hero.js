@@ -36,8 +36,8 @@ Hero.prototype.sortTasksByGreatestReward = function(){
   return _.orderBy(this.taskCollection, ['rewardValue'], ['desc']);
 }
 
-// Hero.prototype.sortTasks = function(sortby, order){
-//   return _.orderBy(this.taskCollection), [sortby],[order];
-// }
+Hero.prototype.sortTasks = function(sortby, order){
+  return _.orderBy(this.taskCollection, [sortby], [order]);
+}
 
 module.exports = Hero;
