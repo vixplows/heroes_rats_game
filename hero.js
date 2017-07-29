@@ -23,21 +23,23 @@ Hero.prototype.eatFood = function(food){
 Hero.prototype.talk = function(){
   return "My name is " + this.name;
 }
-  
-Hero.prototype.sortTasksByLeastDifficult = function(){
-  return _.orderBy(this.taskCollection, ['difficultyLevel'], ['asc']);
-}
-
-Hero.prototype.sortTasksByMostUrgent = function(){
-  return _.orderBy(this.taskCollection, ['urgencyLevel'], ['desc']);
-}
-
-Hero.prototype.sortTasksByGreatestReward = function(){
-  return _.orderBy(this.taskCollection, ['rewardValue'], ['desc']);
-}
 
 Hero.prototype.sortTasks = function(sortby, order){
   return _.orderBy(this.taskCollection, [sortby], [order]);
+}
+
+//use callbacks??
+
+Hero.prototype.viewCompletedOrIncompleteTasks = function(searchfor){
+  if (searchfor === "completed") {
+    return _.filter(this.taskCollection, ["completed", true]);
+  } 
+    if (searchfor === "incomplete") {
+      return _.filter(this.taskCollection, ["completed", false]);
+    }
+      else {
+        return "enter incomplete or completed?"
+      }  
 }
 
 module.exports = Hero;

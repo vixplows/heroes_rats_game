@@ -54,43 +54,7 @@ describe("Hero", function(){
 
   it("should be able to eat favourite food", function(){
     hero.eatFood(food2);
-    assert.strictEqual(hero.health, 110.15)
-  });
-
-  it("should be able to sort tasks by least difficult", function(){
-    hero.addTask(task3);
-    hero.addTask(task1);
-    hero.addTask(task2);
-    assert.deepEqual(hero.sortTasksByLeastDifficult(), 
-      [
-        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false}, 
-        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}, 
-        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}
-      ]);
-  });
-
-  it("should be able to sort tasks by most urgent", function(){
-    hero.addTask(task1);
-    hero.addTask(task2);
-    hero.addTask(task3);
-    assert.deepEqual( hero.sortTasksByMostUrgent(), 
-      [
-        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}, 
-        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}, 
-        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false}
-      ]);
-  });
-
-  it("should be able to sort tasks by greatest reward", function(){
-    hero.addTask(task1);
-    hero.addTask(task2);
-    hero.addTask(task3);
-    assert.deepEqual(hero.sortTasksByGreatestReward(), 
-      [
-        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false},
-        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false},
-        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}
-      ]);
+    assert.strictEqual(hero.health, 110.15);
   });
 
   it("should be able to sort tasks by difficulty, urgency or reward and in ascending or descending order", function(){
@@ -119,4 +83,39 @@ describe("Hero", function(){
         {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": false}
       ]);
   });
+
+  it("should be able to view tasks that are marked as completed or incomplete", function(){
+    hero.addTask(task1);
+    hero.addTask(task2);
+    hero.addTask(task3);
+    // mark task2 as completed
+    task2.markCompleted();
+    // return array of completed tasks
+    assert.deepEqual(hero.viewCompletedOrIncompleteTasks("completed"),
+      [ 
+        {"name": "save city's poor", "difficultyLevel": 8, "urgencyLevel": 3, "rewardValue": 20, "completed": true}
+      ]);
+    // return array of incompleted tasks
+    assert.deepEqual(hero.viewCompletedOrIncompleteTasks("incomplete"),
+      [ 
+        {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false},
+        {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}
+      ]);
+    assert.strictEqual(hero.viewCompletedOrIncompleteTasks("what!"), "enter incomplete or completed?")
+  });
+
+  // xit("should be able to view tasks that are marked as incomplete", function(){
+  //   hero.addTask(task1);
+  //   hero.addTask(task2);
+  //   hero.addTask(task3);
+  //   // mark task2 as completed
+  //   task2.markCompleted();
+  //   // return array of incompleted tasks
+  //   assert.deepEqual(hero.uncompletedTasks(false),
+  //     [ 
+  //       {"name": "rescue a dog", "difficultyLevel": 5, "urgencyLevel": 1, "rewardValue": 35, "completed": false},
+  //       {"name": "create national health service", "difficultyLevel": 10, "urgencyLevel": 2, "rewardValue": 50, "completed": false}
+  //     ]);
+  // });
+
 })
