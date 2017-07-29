@@ -13,6 +13,8 @@ describe("Rat", function(){
     assert.strictEqual(rat.name, "Maggie");
   })
 
-
+  it("should have a poison value", function(){
+    assert.strictEqual(rat.poisonValue, 4);
+  })
 
 })
