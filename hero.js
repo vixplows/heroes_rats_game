@@ -32,8 +32,8 @@ Hero.prototype.sortTasksByMostUrgent = function(){
   return _.orderBy(this.taskCollection, ['urgencyLevel'], ['desc']);
 }
 
-Hero.prototype.sortTasksByGreatesReward = function(){
-  return _.orderBy(this.taskCollecton, ['rewardValue'], ['desc']);
+Hero.prototype.sortTasksByGreatestReward = function(){
+  return _.orderBy(this.taskCollection, ['rewardValue'], ['desc']);
 }
 
 // Hero.prototype.sortTasks = function(sortby, order){
