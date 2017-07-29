@@ -20,6 +20,10 @@ Hero.prototype.eatFood = function(food){
     };
 }
 
+Hero.prototype.talk = function(){
+  return "My name is " + this.name;
+}
+  
 Hero.prototype.sortTasksByLeastDifficult = function(){
   return _.sortBy(this.taskCollection, ['difficultyLevel']);
 }
