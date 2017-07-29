@@ -25,7 +25,19 @@ Hero.prototype.talk = function(){
 }
   
 Hero.prototype.sortTasksByLeastDifficult = function(){
-  return _.sortBy(this.taskCollection, ['difficultyLevel']);
+  return _.orderBy(this.taskCollection, ['difficultyLevel'], ['asc']);
 }
+
+Hero.prototype.sortTasksByMostUrgent = function(){
+  return _.orderBy(this.taskCollection, ['urgencyLevel'], ['desc']);
+}
+
+Hero.prototype.sortTasksByGreatesReward = function(){
+  return _.orderBy(this.taskCollecton, ['rewardValue'], ['desc']);
+}
+
+// Hero.prototype.sortTasks = function(sortby, order){
+//   return _.orderBy(this.taskCollection), [sortby],[order];
+// }
 
 module.exports = Hero;
