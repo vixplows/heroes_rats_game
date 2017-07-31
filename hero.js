@@ -22,7 +22,6 @@ Hero.prototype.eatFood = function(food){
   }
 }
 
-
 Hero.prototype.talk = function(){
   return "My name is " + this.name;
 }
@@ -32,13 +31,18 @@ Hero.prototype.sortTasks = function(sortby, order){
 }
 
 Hero.prototype.viewCompletedOrIncompleteTasks = function(searchfor){
+  if (searchfor !== "completed" || searchfor !=="incomplete") {
+    return "enter incomplete or completed?";
+  }
+
   if (searchfor === "completed") {
-      return _.filter(this.taskCollection, ["completed", true]);
+      return _.filter(this.taskCollection, function(task){
+          return task.completed;
+      });
   } else if (searchfor === "incomplete") {
-      return _.filter(this.taskCollection, ["completed", false]);
-  } else {
-      return "enter incomplete or completed?"
-  }  
+      return _.filter(this.taskCollection, function(task){
+        return !task.completed;
+      });
 }
 
 module.exports = Hero;
